@@ -1,24 +1,23 @@
 let mongoose = require('mongoose')
 
+
 let salarySheet = new mongoose.Schema({
 username: String,
-centercode: String,
-date: String,
-attendanceId:String,
-name: String,
-designation: String,
-shiftTimeing:String,
-startTime: String,
-endTime: String,
-checkInTime:String,
-checkOutTime: String,
-totalWorkinghour: String,
-status: String,
-staffContact:String,
-Department: String,
-Designation: String,
-EmployeeCategory:String,
-joiningDate: String,  
+month: String,
+empId: String,
+empName:String,
+Designations: String,
+basicSlarry: String,
+lateMark:String,
+halfday: String,
+fullday: String,
+adjustLeave:String,
+TWD: String,
+grossSalary: String,
+incentive: String,
+netSalary:String,
+remark: String,
+advancedSalaryDedct: String,
 }, { timestamps: true })
 
 
