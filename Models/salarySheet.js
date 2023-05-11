@@ -27,6 +27,7 @@ netSalary:String,
 remark: String,
 advancedSalaryDedct: String,
 typeOfJobTimeing:String,  
+modeOfPayment:String  
 }, { timestamps: true })
 
 
