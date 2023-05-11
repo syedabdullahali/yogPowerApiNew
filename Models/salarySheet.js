@@ -28,7 +28,7 @@ remark: String,
 advancedSalaryDedct: String,
 typeOfJobTimeing:String,  
 modeOfPayment:String,
-empiD:String,  
+employeeID:String,  
 }, { timestamps: true })
 
 
