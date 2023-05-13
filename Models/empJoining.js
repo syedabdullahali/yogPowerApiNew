@@ -3,11 +3,8 @@ let mongoose = require('mongoose')
 
 let empJoining = new mongoose.Schema({
 username: String, 
-empName:String,
-offerLatter: String,
-ApponmentLater: String,
-Indexion:String,  
-employeeId:String,
+DocumentName:String,
+documentDetails:String,
 }, { timestamps: true })
 
 
