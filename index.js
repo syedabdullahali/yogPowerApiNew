@@ -180,6 +180,7 @@ app.use('/sockreport',userValidate, require('./Routes2/StockOrder/StockReport'))
 app.use('/empCheckIn',userValidate, require('./Routes/empCheckIn'));
 app.use('/salarySheet',userValidate, require('./Routes/salarySheet')); 
 app.use('/jobProfile',userValidate,require('./Routes/jobProfile'))
+app.use('/empJoining',userValidate,require('./Routes/empJoining'))
 
 
 
