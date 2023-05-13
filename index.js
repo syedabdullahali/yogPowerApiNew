@@ -121,6 +121,7 @@ const PaymentMode = require('./Finance/CollectionReport/paymentMode');
 const CenterExpense = require('./Finance/Expense/centerExpense');
 const DailyExpense = require('./Finance/Expense/dailyExpense');
 const PettyCash = require('./Finance/Expense/pettyCash');
+
 app.use(express.json())
 
 app.use('/enquiryForm', userValidate, require('./Routes/enquiryForm'));
@@ -181,7 +182,7 @@ app.use('/empCheckIn',userValidate, require('./Routes/empCheckIn'));
 app.use('/salarySheet',userValidate, require('./Routes/salarySheet')); 
 app.use('/jobProfile',userValidate,require('./Routes/jobProfile'))
 app.use('/empJoining',userValidate,require('./Routes/empJoining'))
-
+app.use('/emplDocument',userValidate,require('./Routes/emplDocument'))
 
 
 
