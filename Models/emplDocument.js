@@ -7,7 +7,7 @@ empID:String,
 empName:String,
 docName:String,
 docview:String,
-MemBerId:String,
+MemBerId:String
 }, { timestamps: true })
 
 
