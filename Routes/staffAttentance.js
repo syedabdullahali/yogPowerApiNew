@@ -37,7 +37,7 @@ router.get('/report', async function (req, res) {
                });  
 
         
-        return res.status(200).json(data);
+        return res.status(200).json(uniqObj);
     } catch (err) {
         return res.status(500).json({ error: err })
     }
