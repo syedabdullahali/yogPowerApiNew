@@ -16,11 +16,11 @@ router.get('/report', async function (req, res) {
     try {
         const response = await staffAttendance.find({status:'Done'})
         
-         const data = response.filter((el)=>el.classesId)
+         const data = response.filter((el)=>Boolean(el.classesId))
 
                 const uniqObj = []
 
-               response.forEach((el,i) => {
+               data.forEach((el,i) => {
                  if(!uniqObj.some((el2)=>el?.classesId===el2?.classesId&&el?.staffId===el2?.staffId)){
                       uniqObj.push({classesId:el.classesId,staffId:el.staffId,
                         time:{hours:+el.totalWorkinghour.split(":")[0],mins:+el.totalWorkinghour.split(":")[1]},details:el
