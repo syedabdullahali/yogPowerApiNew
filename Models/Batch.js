@@ -7,6 +7,9 @@ let Batch = new mongoose.Schema({
 	batch_timing: String,
 	status: Boolean,
 	trainer_name:String,
-	category:String
+	category:String,
+	typeOfTrainer:String,
+	MemberId:String,
+	trainerId:String,
 }, { timestamps: true })
 module.exports = mongoose.model('Batch', Batch);
