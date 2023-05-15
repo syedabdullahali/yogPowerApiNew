@@ -12,6 +12,42 @@ router.get('/all', async function (req, res) {
     }
 })
 
+router.get('/report', async function (req, res) {
+    try {
+        const response = await staffAttendance.find({status:'Done'})
+        
+         const data = response.data.filter((el)=>el.classesId)
+
+                const uniqObj = []
+
+               data.forEach((el,i) => {
+                 console.log(i)
+                 if(!uniqObj.some((el2)=>el?.classesId===el2?.classesId&&el?.staffId===el2?.staffId)){
+                    console.log(el)
+                      uniqObj.push({classesId:el.classesId,staffId:el.staffId,
+                        time:{hours:+el.totalWorkinghour.split(":")[0],mins:+el.totalWorkinghour.split(":")[1]},details:el
+                    })
+                 }else{
+                   uniqObj.forEach((el2,i)=>{
+                    if(el?.classesId===el2?.classesId&&el?.staffId===el2?.staffId){
+                        el2.time.hours+=+el.totalWorkinghour.split(":")[0]
+                        el2.time.mins+=+el.totalWorkinghour.split(":")[1]
+
+                    }
+                   })
+                 }
+               });  
+
+        
+        return res.status(200).json(uniqObj);
+    } catch (err) {
+        return res.status(500).json({ error: err })
+    }
+})
+
+
+
+
 router.post('/create', async (req, res) => {
     try {
         const temp = await new staffAttendance(req.body)
