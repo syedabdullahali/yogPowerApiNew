@@ -10,6 +10,6 @@ let Batch = new mongoose.Schema({
 	category:String,
 	typeOfTrainer:String,
 	MemberId:String,
-	trainerId:String,
+	trainerId:String
 }, { timestamps: true })
 module.exports = mongoose.model('Batch', Batch);
