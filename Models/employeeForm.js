@@ -1,7 +1,6 @@
 let mongoose = require('mongoose')
 
 let employeeForms = new mongoose.Schema({
-    
     username: String,
     image: String,
     FullName: String,
@@ -41,9 +40,8 @@ let employeeForms = new mongoose.Schema({
     status:Boolean,
     OfferLetter: String,
     AppoinmentLetter:String,
-    Indexion: String
-    
-
+    Indexion: String,
+    trainerStatus:Boolean
 }, { timestamps: true })
 
 const EmployeeForm = mongoose.model('EmployeeForm', employeeForms);
