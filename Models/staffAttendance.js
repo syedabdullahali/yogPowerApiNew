@@ -44,6 +44,7 @@ let staffAttentance = new mongoose.Schema({
 	MemberId:String,
 	trainerId:String,
 	BatchTime:String,
+	classesId:String
 }, { timestamps: true })
 
 module.exports = mongoose.model('staffAttentance', staffAttentance);
