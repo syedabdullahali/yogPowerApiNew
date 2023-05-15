@@ -34,7 +34,6 @@ let staffAttentance = new mongoose.Schema({
     },
     checkInstatus: String,
     checkOutstatus: String,
-    username: String,
 	service_name: String,
 	service_variation: String,
 	Batch_Duration: String,
