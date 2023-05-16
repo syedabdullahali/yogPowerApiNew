@@ -23,14 +23,14 @@ router.get('/report', async function (req, res) {
                data.forEach((el,i) => {
                  if(!uniqObj.some((el2)=>el?.classesId===el2?.classesId&&el?.staffId===el2?.staffId)){
                       uniqObj.push({classesId:el.classesId,staffId:el.staffId,
-                        time:{hours:+el.totalWorkinghour.split(":")[0],mins:+el.totalWorkinghour.split(":")[1]},details:el
+                        time:{hours:+el.totalWorkinghour.split(":")[0],mins:+el.totalWorkinghour.split(":")[1]},details:el,noOfClasses:1
                     })
                  }else{
                    uniqObj.forEach((el2,i)=>{
                     if(el?.classesId===el2?.classesId&&el?.staffId===el2?.staffId){
                         el2.time.hours+=+el.totalWorkinghour.split(":")[0]
                         el2.time.mins+=+el.totalWorkinghour.split(":")[1]
-
+                        el2.noOfClasses+=1
                     }
                    })
                  }
