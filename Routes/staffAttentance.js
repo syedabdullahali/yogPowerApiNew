@@ -15,7 +15,7 @@ router.get('/all', async function (req, res) {
 router.get('/report', async function (req, res) {
     try {
         const response = await staffAttendance.find({status:'Done'})
-        const data = [...res.data.filter((el)=>Boolean(el.classesId&&el.status ==='Done'))]
+        const data = response.filter((el)=>Boolean(el.classesId))]
 
             const uniqObj = []
 
