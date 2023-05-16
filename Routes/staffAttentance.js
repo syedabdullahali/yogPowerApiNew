@@ -15,11 +15,12 @@ router.get('/all', async function (req, res) {
 router.get('/report', async function (req, res) {
     try {
         const response = await staffAttendance.find({status:'Done'})
-        const data = response.filter((el)=>Boolean(el.classesId))]
+        const data = response.filter((el)=>Boolean(el.classesId))
 
-            const uniqObj = []
+                const uniqObj = []
 
-           data.forEach((el,i) => {
+
+               data.forEach((el,i) => {
              if(!uniqObj.some((el2)=>el?.classesId===el2?.classesId&&el?.staffId===el2?.staffId&&
                               el2?.month===new Date(el.checkDate).getMonth()&&el2?.year===new Date(el.checkDate).getFullYear())){
                   uniqObj.push({classesId:el.classesId,staffId:el.staffId,month:new Date(el.checkDate)
